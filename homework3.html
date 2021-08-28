@@ -38,15 +38,9 @@
 
 		//Найти все продукты с фото
 
-		// Моя реализация, которая не работает. Должна ли?   
 		let havephoto = products.filter(function(product){
-			product.photos.lenght > 0;
+			product.photos.length > 0;
 		});
-		console.log(havephoto);
-	
-		// Посмотрела видео с решением этого задания. 
-		// Тоже не работает: через песочницу, запуском файла в браузере :(
-		let havephoto = products.filter(product => 'photos' in product && product.photos.lenght > 0);
 		console.log(havephoto);
 
 
@@ -58,6 +52,7 @@
 			if (a.price <= b.price) {
 				return -1;
 			}
+				returtn 0;
 		});
 		console.log(sequencing);
 
@@ -70,7 +65,7 @@
 
 		// Задание #6 
 
-		for (let i = 0, i <= 20, i++) {
+		for (let i = 0; i <= 20; i++) {
 			console.log('x');
 		}
 	</script>
