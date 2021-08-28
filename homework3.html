@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		// Задание #1
+
+		for (let i = 0; i <= 10; i++) {
+			if (i == 0) {
+				console.log(`${i} – это ноль`)
+			} else if (i % 2 == 0) { 
+				console.log(`${i} – четное число`)
+			} else {
+				console.log(`${i} – нечетное число`)
+			}
+		}
+
+		// Задание #2
+
+		console.log(post.author);
+		console.log(post.comments[0].rating.dislikes);
+		console.log(post.comments[1].userId);
+		console.log(post.comments[1].text);
+
+		// Задание #3 
+
+		 products.forEach(function(product){
+		 	duscount = product.price - (product.price / 100 * 15);
+		 	console.log(duscount);
+		 });
+
+		// Задание #4
+
+		//Найти все продукты с фото
+
+		// Моя реализация, которая не работает. Должна ли?   
+		let havephoto = products.filter(function(product){
+			product.photos.lenght > 0;
+		});
+		console.log(havephoto);
+	
+		// Посмотрела видео с решением этого задания. 
+		// Тоже не работает: через песочницу, запуском файла в браузере :(
+		let havephoto = products.filter(product => 'photos' in product && product.photos.lenght > 0);
+		console.log(havephoto);
+
+
+		// Отсортировать цены по возрастанию.
+		let sequencing = products.sort(function (a, b){
+			if (a.price > b.price) {
+				return 1;
+			}
+			if (a.price <= b.price) {
+				return -1;
+			}
+		});
+		console.log(sequencing);
+
+
+		// Задание #5
+
+		for(i = 0; i <= 9; alert(i++)){
+		/* здесь пусто */
+		}
+
+		// Задание #6 
+
+		for (let i = 0, i <= 20, i++) {
+			console.log('x');
+		}
+	</script>
+	
+</body>
+</html>
