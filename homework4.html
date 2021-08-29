@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		// Задание #1
+
+		let digits = {};
+		let number = +prompt('Введите число от 0 до 9:', '');
+
+		function getNumber(number) {
+			if (Number.isInteger(number) && number <= 999) {
+				digits.units = number % 10;
+				digits.tens = Math.floor((number % 100) / 10);
+				digits.hundreds = Math.floor(number / 100);
+			} else {
+				console.log('Число вне диапазона или не является целым!')
+			}
+		};
+
+		getNumber(number);
+		console.log(digits);
+
+		// Задание #2
+
+		//es5
+		function Product(name, price) {
+			this.name = name;
+			this.price = price;
+		}
+
+		Product.make25PercentDiscount = function() {
+			products.price = products.price - ((products.price / 100) * 25); 
+		}
+
+		let products = new Product('Чай', '220');
+		Product.make25PercentDiscount();
+		console.log(products);
+
+		//es6
+
+		class Product {
+			constructor (name, price) {
+				this.name = name;
+				this.price = price;
+			}
+		}
+
+		Product.make25PercentDiscount = function() {
+			products.price = products.price - ((products.price / 100) * 25);
+		}
+
+		let products = new Product('Пряники', '200');
+		Product.make25PercentDiscount();
+		console.log(products);
+
+
+		// Задание #3
+
+		//es5
+
+		function Post(author, text, date) {
+			this.author = author;
+			this.text = text;
+			this.date = date;
+		};
+
+		Post.prototype.edit = function(text) {
+			this.text = text;
+		};
+
+		let obj = new Post('Sherlock', 'smthn', '21/09/21');
+		console.log(obj);
+		obj.edit('John is quite a Guy');
+		console.log(obj);
+
+
+
+		function AttachedPost(author, text, date) {
+			Post.call(this, author, text, date);
+			this.highlighted = false;
+		};
+
+		AttachedPost.prototype = Object.create(Post.prototype);
+		AttachedPost.prototype.constructor = AttachedPost;
+
+		AttachedPost.prototype.makeTextHighlighted = function() {
+			this.highlighted = true;
+		}
+
+		let obj1 = new AttachedPost('John', 'smthn', '19/08/20');
+		console.log(obj1);
+		obj1.edit("#221BringIT!!");
+		obj1.makeTextHighlighted();
+		console.log(obj1);
+
+		//es6
+
+		class Post {
+			constructor(author, text, date) {
+				this.author = author;
+				this.text = text;
+				this.date = date;
+			}
+
+			edit(text) {
+				this.text = text;
+			}
+		}
+
+		let obj = new Post('Sherlock', 'smthn', '21/09/21');
+		console.log(obj);
+		obj.edit('John is quite a Guy');
+		console.log(obj);
+
+
+		class AttachedPost extends Post {
+			constructor(author, text, date) {
+				super(author, text, date);
+				this.highlighted = false;
+			}
+
+			makeTextHighlighted() {
+				this.highlighted = true;
+			}
+		}
+
+		let obj1 = new AttachedPost('John', 'smthn', '19/08/20');
+		console.log(obj1);
+		obj1.edit('#221BringIT!!');
+		obj1.makeTextHighlighted();
+		console.log(obj1);
+	</script>
+	
+</body>
+</html>
