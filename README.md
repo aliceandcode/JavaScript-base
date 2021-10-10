@@ -1,2 +1,3 @@
 # js-base
-My first repo wyth a JS homework. 
+My first repo. 
+Studied the basic concepts of JavaScript. 
