@@ -19,17 +19,9 @@
     <script>
         'use strict';
         let elem = document.getElementsByTagName('h2');
-        for(i = 0; i <= elem.length; i++) {
+        for(i = 0; i < elem.length; i++) {
             console.log(elem[i].className);
         }
-
-        /*В этом и предыдущем задании у меня отрабатывает код и выводит результат в консоль. 
-        Но в последней строчке есть ошибка с текстом:
-        Uncaught TypeError: Cannot read property 'nodeName' of undefined
-        at 2-вывод_имени_тега.html:23
-        На 23 строчке как раз вывод в консоль. 
-        В интернете нашла возможное объяснение: это из-за того, что обращаюсь к элементам на странице, которые ещё могли не догрузиться. 
-        Может ли это быть связано?*/
     </script>
 </body>
 </html>
